@@ -1,0 +1,40 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="Kokuev Mikhail">
+
+    <title>Calculation</title>
+
+    <link href="{% static '/css/style.css' %}" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <form method="POST" class="calc__form">
+                {% csrf_token %}
+                <div class="form__title">
+                    <div class="title__style">Calculator</div>
+                </div>
+                <div class="form__body">
+                    <div class="form__input">
+                        <input type="text" name="problem" value="{{ problem }}" class="input__style">
+                        <input type="submit" value="Ok" class="btn__style">
+                    </div>
+                    <div class="form__result">
+                        <div class="result__style">{{ result }}</div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <footer class="footer">
+            <div class="footer__text">
+                © 2022г
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
+
